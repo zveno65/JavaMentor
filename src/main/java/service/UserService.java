@@ -31,7 +31,7 @@ public class UserService {
     public List<User> getAllUsers() {
         List<User> users = new ArrayList<>();
         try {
-            users = getUserDAO().getAllUser();
+            users = getUserDAO().findAll();
         }
         catch (SQLException e) {
             e.printStackTrace();
@@ -41,7 +41,7 @@ public class UserService {
 
     public void addUser(User user) {
         try {
-            getUserDAO().addUser(user);
+            getUserDAO().save(user);
         }
         catch (SQLException e) {
             e.printStackTrace();
@@ -50,16 +50,16 @@ public class UserService {
 
     public void updateUser(User user) {
         try {
-            getUserDAO().updateUser(user);
+            getUserDAO().update(user);
         }
         catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
-    public void deleteUser(Long id) {
+    public void deleteUser(User user) {
         try {
-            getUserDAO().deleteUser(id);
+            getUserDAO().delete(user);
         }
         catch (SQLException e) {
             e.printStackTrace();
@@ -68,7 +68,7 @@ public class UserService {
 
     public User getUserById(long id) {
         try {
-            return getUserDAO().getUserById(id);
+            return getUserDAO().find(id);
         } catch (SQLException e) {
             e.printStackTrace();
         }

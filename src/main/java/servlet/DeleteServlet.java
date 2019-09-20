@@ -1,5 +1,6 @@
 package servlet;
 
+import model.User;
 import service.UserService;
 
 import javax.servlet.RequestDispatcher;
@@ -14,7 +15,8 @@ import java.io.IOException;
 public class DeleteServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        UserService.getInstance().deleteUser(Long.valueOf(req.getParameter("id")));
+        User user = UserService.getInstance().getUserById(Long.valueOf(req.getParameter("id")));
+        UserService.getInstance().deleteUser(user);
         RequestDispatcher dispatcher = req.getRequestDispatcher("/list");
         dispatcher.forward(req, resp);
     }

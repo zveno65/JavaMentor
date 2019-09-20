@@ -6,7 +6,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserDAO {
+public class UserDAO implements DAO<User>{
 
     private Connection connection;
 
@@ -14,7 +14,7 @@ public class UserDAO {
         this.connection = connection;
     }
 
-    public List<User> getAllUser() throws SQLException {
+    public List<User> findAll() throws SQLException {
         return new TExecutor().execQuery(connection,
                 "SELECT * FROM user",
                 result -> {
@@ -29,7 +29,7 @@ public class UserDAO {
                 });
     }
 
-    public User getUserById(long id) throws SQLException {
+    public User find(Long id) throws SQLException {
         return new TExecutor().execQuery(connection,
                 "select * from user where id = '" + id + "'",
                 resultSet -> {
@@ -42,27 +42,27 @@ public class UserDAO {
                 });
     }
 
-    public void updateUser(User user) throws SQLException{
+    public boolean update(User user) throws SQLException{
         try (PreparedStatement preparedStatement = connection.prepareStatement("update user set name = ?, age = ? where id = ?")) {
             preparedStatement.setString(1, user.getName());
             preparedStatement.setInt(2,user.getAge());
             preparedStatement.setLong(3, user.getId());
-            preparedStatement.executeUpdate();
+            return preparedStatement.executeUpdate() > 0;
         }
     }
 
-    public void addUser(User user) throws SQLException {
+    public boolean save(User user) throws SQLException {
         try (PreparedStatement preparedStatement = connection.prepareStatement("insert into user(name, age) values (?, ?)")) {
             preparedStatement.setString(1, user.getName());
             preparedStatement.setInt(2, user.getAge());
-            preparedStatement.execute();
+            return preparedStatement.execute();
         }
     }
 
-    public void deleteUser(long id) throws SQLException {
+    public boolean delete(User user) throws SQLException {
         try (PreparedStatement preparedStatement = connection.prepareStatement("delete from user where id = ?")) {
-            preparedStatement.setLong(1, id);
-            preparedStatement.execute();
+            preparedStatement.setLong(1, user.getId());
+            return preparedStatement.execute();
         }
     }
 

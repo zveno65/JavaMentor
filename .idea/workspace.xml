@@ -7,24 +7,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ba9b7ab-1008-4659-84cc-1933c6785bfd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/DAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/MyWeb_war_exploded/WEB-INF/classes/dao/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MyWeb_war_exploded/WEB-INF/classes/dao/UserDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/MyWeb_war_exploded/WEB-INF/classes/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MyWeb_war_exploded/WEB-INF/classes/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/MyWeb_war_exploded/WEB-INF/classes/servlet/EditServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MyWeb_war_exploded/WEB-INF/classes/servlet/EditServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/MyWeb_war_exploded/WEB-INF/lib/jstl-1.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/MyWeb_war_exploded/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MyWeb_war_exploded/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/MyWeb_war_exploded/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MyWeb_war_exploded/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MyWeb_war_exploded/WEB-INF/classes/servlet/DeleteServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MyWeb_war_exploded/WEB-INF/classes/servlet/DeleteServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/EditServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/EditServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/MyWeb.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/DeleteServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/DeleteServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/dao/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/UserDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/servlet/EditServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/servlet/EditServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/jstl-1.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/servlet/DeleteServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/servlet/DeleteServlet.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,6 +31,7 @@
         <option value="Class" />
         <option value="Jsp File" />
         <option value="HTML File" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -248,7 +242,7 @@
       <workItem from="1568978756326" duration="7172000" />
       <workItem from="1568989021826" duration="7721000" />
       <workItem from="1568997705554" duration="140000" />
-      <workItem from="1568998469689" duration="2666000" />
+      <workItem from="1568998469689" duration="4016000" />
     </task>
     <servers />
   </component>
@@ -279,8 +273,14 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/servlet/DeleteServlet.java</url>
-          <line>16</line>
+          <line>18</line>
           <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/web/index.html</url>
+          <line>14</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
