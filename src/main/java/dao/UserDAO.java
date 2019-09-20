@@ -14,7 +14,7 @@ public class UserDAO {
         this.connection = connection;
     }
 
-    public List<User> getAllClient() throws SQLException {
+    public List<User> getAllUser() throws SQLException {
         return new TExecutor().execQuery(connection,
                 "SELECT * FROM user",
                 result -> {

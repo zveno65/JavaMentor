@@ -15,7 +15,7 @@ import java.io.IOException;
 public class EditServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        User user = UserService.getInstance().getClientById(Long.valueOf(req.getParameter("id")));
+        User user = UserService.getInstance().getUserById(Long.valueOf(req.getParameter("id")));
         req.setAttribute("name", user.getName());
         req.setAttribute("age", user.getAge());
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/edit.jsp");
@@ -27,7 +27,7 @@ public class EditServlet extends HttpServlet {
         String name = req.getParameter("name");
         int age = Integer.valueOf(req.getParameter("age"));
         long id = Long.valueOf(req.getParameter("id"));
-        User user = UserService.getInstance().getClientById(id);
+        User user = UserService.getInstance().getUserById(id);
         user.setAge(age);
         user.setName(name);
         UserService.getInstance().updateUser(user);

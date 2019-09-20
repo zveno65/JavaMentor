@@ -21,7 +21,7 @@ public class UserService {
 
     private UserService() {
         try {
-            getBankClientDAO().createTable();
+            getUserDAO().createTable();
         }
         catch (SQLException e) {
             e.printStackTrace();
@@ -31,7 +31,7 @@ public class UserService {
     public List<User> getAllUsers() {
         List<User> users = new ArrayList<>();
         try {
-            users = getBankClientDAO().getAllClient();
+            users = getUserDAO().getAllUser();
         }
         catch (SQLException e) {
             e.printStackTrace();
@@ -41,7 +41,7 @@ public class UserService {
 
     public void addUser(User user) {
         try {
-            getBankClientDAO().addUser(user);
+            getUserDAO().addUser(user);
         }
         catch (SQLException e) {
             e.printStackTrace();
@@ -50,7 +50,7 @@ public class UserService {
 
     public void updateUser(User user) {
         try {
-            getBankClientDAO().updateUser(user);
+            getUserDAO().updateUser(user);
         }
         catch (SQLException e) {
             e.printStackTrace();
@@ -59,16 +59,16 @@ public class UserService {
 
     public void deleteUser(Long id) {
         try {
-            getBankClientDAO().deleteUser(id);
+            getUserDAO().deleteUser(id);
         }
         catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
-    public User getClientById(long id) {
+    public User getUserById(long id) {
         try {
-            return getBankClientDAO().getUserById(id);
+            return getUserDAO().getUserById(id);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -77,14 +77,14 @@ public class UserService {
 
     public void cleanUp() {
         try {
-            getBankClientDAO().dropTable();
+            getUserDAO().dropTable();
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
     public void createTable() {
         try {
-            getBankClientDAO().createTable();
+            getUserDAO().createTable();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -117,7 +117,7 @@ public class UserService {
         }
     }
 
-    private static UserDAO getBankClientDAO() {
+    private static UserDAO getUserDAO() {
         return new UserDAO(getMysqlConnection());
     }
 
