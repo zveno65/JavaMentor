@@ -1,7 +1,8 @@
 package servlet;
 
 import model.User;
-import service.UserService;
+import service.UserServiceHib;
+import service.UserServiceJDBC;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,8 +11,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.Writer;
 
 @WebServlet("/add/*")
 public class AddServlet extends HttpServlet {
@@ -26,7 +25,7 @@ public class AddServlet extends HttpServlet {
         String name = req.getParameter("name");
         int age = Integer.valueOf(req.getParameter("age"));
         User user = new User(name, age);
-        UserService.getInstance().addUser(user);
+        UserServiceHib.getInstance().addUser(user);
         req.setAttribute("userName", name);
         doGet(req, resp);
     }

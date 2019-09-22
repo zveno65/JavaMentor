@@ -1,36 +1,33 @@
 package service;
 
-import dao.UserDAO;
+import dao.DAO;
+import dao.UserDAO_Hibernate;
 import model.User;
+import org.hibernate.SessionFactory;
+import util.DBHelper;
 
-import java.sql.Connection;
-import java.sql.Driver;
-import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import com.mysql.jdbc.*;
-import util.DBHelper;
 
-public class UserService {
+public class UserServiceHib {
+    private static UserServiceHib carService;
 
-    private static UserService userService = new UserService();
+    private SessionFactory sessionFactory;
 
-    public static UserService getInstance() {
-        return userService;
+    private UserServiceHib(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
     }
 
-    private UserService() {
-        try {
-            getUserDAO().createTable();
+    public static UserServiceHib getInstance() {
+        if (carService == null) {
+            carService = new UserServiceHib(DBHelper.getSessionFactory());
         }
-        catch (SQLException e) {
-            e.printStackTrace();
-        }
+        return carService;
     }
 
     public List<User> getAllUsers() {
-        List<User> users = new ArrayList<>();
+        List users = new ArrayList<>();
         try {
             users = getUserDAO().findAll();
         }
@@ -76,23 +73,7 @@ public class UserService {
         return null;
     }
 
-    public void cleanUp() {
-        try {
-            getUserDAO().dropTable();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+    private DAO<User> getUserDAO() {
+        return new UserDAO_Hibernate(sessionFactory.openSession());
     }
-    public void createTable() {
-        try {
-            getUserDAO().createTable();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private static UserDAO getUserDAO() {
-        return new UserDAO(DBHelper.getConnection());
-    }
-
 }
