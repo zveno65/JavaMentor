@@ -7,27 +7,58 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ba9b7ab-1008-4659-84cc-1933c6785bfd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/servlet/AddServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/servlet/DeleteServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/servlet/EditServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/servlet/ListServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/views/add.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/views/edit.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/views/list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/factory/FactoryManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/factory/UserDaoFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/factory/UserHibernateDaoFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/factory/UserJdbcDaoFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/service/UserImplService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/MyWeb_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/MyWeb_war_exploded.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/MyWeb_war_exploded/WEB-INF/classes/service/UserServiceHib.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MyWeb_war_exploded/WEB-INF/classes/service/UserServiceHib.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/MyWeb_war_exploded/WEB-INF/classes/service/UserServiceJDBC.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MyWeb_war_exploded/WEB-INF/classes/service/UserServiceJDBC.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/MyWeb_war_exploded/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MyWeb_war_exploded/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/UserServiceHib.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/UserServiceHib.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/UserServiceJDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/UserServiceJDBC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/service/UserServiceHib.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/service/UserServiceHib.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/service/UserServiceJDBC.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/service/UserServiceJDBC.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MyWeb_war_exploded/WEB-INF/classes/dao/DAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MyWeb_war_exploded/WEB-INF/classes/dao/DAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MyWeb_war_exploded/WEB-INF/classes/dao/UserDAO_Hibernate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MyWeb_war_exploded/WEB-INF/classes/dao/UserDAO_JDBC$TExecutor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MyWeb_war_exploded/WEB-INF/classes/dao/UserDAO_JDBC$TResultHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MyWeb_war_exploded/WEB-INF/classes/dao/UserDAO_JDBC.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MyWeb_war_exploded/WEB-INF/classes/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MyWeb_war_exploded/WEB-INF/classes/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MyWeb_war_exploded/WEB-INF/classes/service/UserServiceHib.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MyWeb_war_exploded/WEB-INF/classes/service/UserServiceJDBC.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MyWeb_war_exploded/WEB-INF/classes/servlet/AddServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MyWeb_war_exploded/WEB-INF/classes/servlet/AddServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MyWeb_war_exploded/WEB-INF/classes/servlet/DeleteServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MyWeb_war_exploded/WEB-INF/classes/servlet/DeleteServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MyWeb_war_exploded/WEB-INF/classes/servlet/EditServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MyWeb_war_exploded/WEB-INF/classes/servlet/EditServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MyWeb_war_exploded/WEB-INF/classes/servlet/ListServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MyWeb_war_exploded/WEB-INF/classes/servlet/ListServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MyWeb_war_exploded/WEB-INF/classes/util/DBHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MyWeb_war_exploded/WEB-INF/classes/util/DBHelper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MyWeb_war_exploded/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MyWeb_war_exploded/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MyWeb_war_exploded/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MyWeb_war_exploded/views/add.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MyWeb_war_exploded/views/edit.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MyWeb_war_exploded/views/list.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/Dao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/UserDAO_Hibernate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserHibernateDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/UserDAO_JDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserJdbcDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/UserServiceHib.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/UserHibService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/UserServiceJDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/UserJdbcService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/AddServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/AddServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/DeleteServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/DeleteServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/EditServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/EditServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/ListServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/ListServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/DBHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/DBHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/UserDAO_Hibernate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/UserDAO_JDBC$TExecutor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/UserDAO_JDBC$TResultHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/UserDAO_JDBC.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/service/UserServiceHib.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/service/UserServiceJDBC.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/servlet/AddServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/servlet/AddServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/servlet/DeleteServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/servlet/DeleteServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/servlet/EditServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/servlet/EditServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/servlet/ListServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/servlet/ListServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/views/add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/add.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/views/edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/edit.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/views/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/list.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -72,13 +103,18 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../web1" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="project.structure.side.proportion" value="0.20344828" />
     <property name="settings.editor.selected.configurable" value="configurable.group.build.tools" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Home\Desktop\java\JavaMentorServlet1\stepic_java_webserver\MyWeb\src\main\resources" />
+      <recent name="C:\Users\Home\Desktop\java\JavaMentorServlet1\stepic_java_webserver\MyWeb\src\main\java\factory" />
+      <recent name="C:\Users\Home\Desktop\java\JavaMentorServlet1\stepic_java_webserver\MyWeb\web\WEB-INF" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Home\Desktop\java\JavaMentorServlet1\stepic_java_webserver\MyWeb\web\WEB-INF\lib" />
     </key>
@@ -255,7 +291,9 @@
       <workItem from="1568998469689" duration="5098000" />
       <workItem from="1569131760734" duration="6090000" />
       <workItem from="1569139993881" duration="8296000" />
-      <workItem from="1569153232182" duration="1668000" />
+      <workItem from="1569153232182" duration="7681000" />
+      <workItem from="1569167233074" duration="7798000" />
+      <workItem from="1569242859210" duration="8527000" />
     </task>
     <servers />
   </component>
@@ -280,16 +318,5 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/servlet/EditServlet.java</url>
-          <line>33</line>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

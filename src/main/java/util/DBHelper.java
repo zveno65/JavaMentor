@@ -1,5 +1,6 @@
 package util;
 
+import factory.UserDaoFactory;
 import model.User;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;

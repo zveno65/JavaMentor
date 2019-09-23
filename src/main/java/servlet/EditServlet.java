@@ -1,8 +1,10 @@
 package servlet;
 
 import model.User;
-import service.UserServiceHib;
-import service.UserServiceJDBC;
+import service.UserHibService;
+import service.UserImplService;
+import service.UserService;
+import service.UserJdbcService;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -14,12 +16,15 @@ import java.io.IOException;
 
 @WebServlet("/edit/*")
 public class EditServlet extends HttpServlet {
+
+    private UserService userService = UserImplService.getInstance();
+    //private UserService userService = UserJdbcService.getInstance();
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        User user = UserServiceHib.getInstance().getUserById(Long.valueOf(req.getParameter("id")));
-        req.setAttribute("name", user.getName());
-        req.setAttribute("age", user.getAge());
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/edit.jsp");
+        User user = userService.getUserById(Long.valueOf(req.getParameter("id")));
+        req.setAttribute("user", user);
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("WEB-INF/views/edit.jsp");
         requestDispatcher.forward(req, resp);
     }
 
@@ -28,11 +33,11 @@ public class EditServlet extends HttpServlet {
         String name = req.getParameter("name");
         int age = Integer.valueOf(req.getParameter("age"));
         long id = Long.valueOf(req.getParameter("id"));
-        User user = UserServiceHib.getInstance().getUserById(id);
+        User user = userService.getUserById(id);
         user.setAge(age);
         user.setName(name);
-        UserServiceHib.getInstance().updateUser(user);
-        req.setAttribute("userName", name);
-        doGet(req, resp);
+        userService.updateUser(user);
+        req.setAttribute("editName", name);
+        new ListServlet().doGet(req, resp);
     }
 }

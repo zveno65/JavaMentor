@@ -1,8 +1,10 @@
 package servlet;
 
 import model.User;
-import service.UserServiceHib;
-import service.UserServiceJDBC;
+import service.UserHibService;
+import service.UserImplService;
+import service.UserService;
+import service.UserJdbcService;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -14,9 +16,13 @@ import java.io.IOException;
 
 @WebServlet("/add/*")
 public class AddServlet extends HttpServlet {
+
+    private UserService userService = UserImplService.getInstance();
+    //private UserService userService = UserJdbcService.getInstance();
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/add.jsp");
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("WEB-INF/views/add.jsp");
         requestDispatcher.forward(req, resp);
     }
 
@@ -25,8 +31,8 @@ public class AddServlet extends HttpServlet {
         String name = req.getParameter("name");
         int age = Integer.valueOf(req.getParameter("age"));
         User user = new User(name, age);
-        UserServiceHib.getInstance().addUser(user);
-        req.setAttribute("userName", name);
-        doGet(req, resp);
+        userService.addUser(user);
+        req.setAttribute("addName", name);
+        new ListServlet().doGet(req, resp);
     }
 }

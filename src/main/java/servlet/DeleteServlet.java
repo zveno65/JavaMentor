@@ -1,8 +1,10 @@
 package servlet;
 
 import model.User;
-import service.UserServiceHib;
-import service.UserServiceJDBC;
+import service.UserHibService;
+import service.UserImplService;
+import service.UserService;
+import service.UserJdbcService;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -14,10 +16,14 @@ import java.io.IOException;
 
 @WebServlet("/delete/*")
 public class DeleteServlet extends HttpServlet {
+
+    private UserService userService = UserImplService.getInstance();
+    //private UserService userService = UserJdbcService.getInstance();
+
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        User user = UserServiceHib.getInstance().getUserById(Long.valueOf(req.getParameter("id")));
-        UserServiceHib.getInstance().deleteUser(user);
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        User user = userService.getUserById(Long.valueOf(req.getParameter("id")));
+        userService.deleteUser(user);
         RequestDispatcher dispatcher = req.getRequestDispatcher("/list");
         dispatcher.forward(req, resp);
     }

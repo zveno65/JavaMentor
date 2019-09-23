@@ -1,8 +1,11 @@
 package servlet;
 
+import dao.UserHibernateDao;
 import model.User;
-import service.UserServiceHib;
-import service.UserServiceJDBC;
+import service.UserHibService;
+import service.UserImplService;
+import service.UserService;
+import service.UserJdbcService;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,13 +16,23 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/list/*")
+@WebServlet("/")
 public class ListServlet extends HttpServlet {
+
+    private UserService userService = UserImplService.getInstance();
+    //private UserService userService = UserJdbcService.getInstance();
+
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        doGet(req, resp);
+    }
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        List<User> users = UserServiceHib.getInstance().getAllUsers();
+        List<User> users = userService.getAllUsers();
         req.setAttribute("users", users);
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/list.jsp");
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("WEB-INF/views/list.jsp");
         requestDispatcher.forward(req, resp);
     }
 }
